@@ -28,6 +28,7 @@
                 <p class="login-box-msg">Sign in to start your session</p>
 
                 <form action="/style/index3.html" method="post">
+                    @csrf
                     <div class="mb-3 input-group">
                         <input type="email" class="form-control" placeholder="Email">
                         <div class="input-group-append">
