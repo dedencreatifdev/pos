@@ -4,22 +4,40 @@ namespace App\Http\Controllers;
 
 use App\DataTables\UsersDataTable;
 use App\Models\Produk;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Yajra\DataTables\DataTables;
 
 class ProdukController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    // public function index()
-    // {
-    //     return view('pages.produk.produk-index')->with('title','Produk List');
-    // }
-
-    public function index(UsersDataTable $dataTable)
+    public function index(Request $request)
     {
-        return $dataTable->render('pages.produk.produk-index');
+        if ($request->ajax()) {
+
+            $data = User::query();
+
+            return DataTables::of($data)
+                    ->addIndexColumn()
+                    ->addColumn('action', function($row){
+
+                            $btn = '<a href="javascript:void(0)" class="edit btn btn-primary btn-xs">View</a>';
+
+                            return $btn;
+                    })
+                    ->rawColumns(['action'])
+                    ->make(true);
+        }
+
+        return view('pages.produk.produk-index');
     }
+
+    // public function index(UsersDataTable $dataTable)
+    // {
+    //     return $dataTable->render('pages.produk.produk-index');
+    // }
 
     /**
      * Show the form for creating a new resource.
