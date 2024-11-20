@@ -19,22 +19,28 @@ class ProdukController extends Controller
     {
         if ($request->ajax()) {
 
-            $data = Produk::all();
+            $data = Produk::query()
+                ->with('getSatuan')
+                ->with('getKategori');
+            // ->with('getMerk');
 
             return DataTables::of($data)
                 ->addIndexColumn()
-                ->addColumn('action', function (Produk $row) {
-                    return view('pages.produk.btn-produk', compact('row'));
+                // ->addColumn('action', function (Produk $row) {
+                //     return view('pages.produk.btn-produk', compact('row'));
+                // })
+                ->addColumn('satuan', function (Produk $produk): string {
+                    return $produk->getSatuan['name'] ?? '';
                 })
-                ->addColumn('satuan', function (Produk $row) {
-                    // $data_satuan = Satuan::all();
-                    $satuan = Satuan::where('id', '=', $row->unit)->first();
-                    return $row;
+                ->addColumn('kategori', function (Produk $produk): string {
+                    return $produk->getKategori['name'] ?? '';
+                })
+                ->addColumn('merk', function (Produk $produk): string {
+                    return $produk->getMerk['name'] ?? '';
                 })
                 ->rawColumns(['action'])
                 ->make(true);
         }
-
         return view('pages.produk.produk-index');
     }
 

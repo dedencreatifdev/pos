@@ -91,12 +91,12 @@
                         name: 'satuan'
                     },
                     {
-                        data: 'category_id',
-                        name: 'category_id'
+                        data: 'kategori',
+                        name: 'kategori'
                     },
                     {
-                        data: 'brand',
-                        name: 'brand'
+                        data: 'merk',
+                        name: 'merk'
                     },
                     {
                         data: 'price',
@@ -122,12 +122,12 @@
                         render: $.fn.dataTable.render.number(',', '.', 0, ''),
                         className: 'dt-body-center'
                     },
-                    {
-                        data: 'action',
-                        name: 'action',
-                        orderable: false,
-                        searchable: false
-                    },
+                    // {
+                    //     data: 'action',
+                    //     name: 'action',
+                    //     orderable: false,
+                    //     searchable: false
+                    // },
                 ]
             });
 

@@ -26,7 +26,8 @@ class ProdukDataTable extends DataTable
             ->addColumn('action', 'produk.action')
             ->addColumn('satuan', function (Produk $produk, Satuan $satuan) {
                 $data_satuan = Satuan::where('id', '=', $produk->unit)->first();
-                return $data_satuan->name;
+                
+                return $data_satuan;
             })
             ->setRowId('id');
     }
