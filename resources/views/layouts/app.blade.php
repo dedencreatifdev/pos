@@ -99,7 +99,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- AdminLTE App -->
     <script src="/style/dist/js/adminlte.min.js"></script>
 
-    <script src="dist/js/pages/dashboard2.js"></script>
+
     @stack('js')
 </body>
 

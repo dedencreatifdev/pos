@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\DataTables\ProdukDataTable;
 use App\DataTables\UsersDataTable;
 use App\Models\Produk;
+use App\Models\Satuan;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Yajra\DataTables\DataTables;
@@ -17,28 +19,36 @@ class ProdukController extends Controller
     {
         if ($request->ajax()) {
 
-            $data = User::query();
+            $data = Produk::all();
 
             return DataTables::of($data)
-                    ->addIndexColumn()
-                    ->addColumn('action', function($row){
-
-                            $btn = '<a href="javascript:void(0)" class="edit btn btn-primary btn-xs">View</a>';
-
-                            return $btn;
-                    })
-                    ->rawColumns(['action'])
-                    ->make(true);
+                ->addIndexColumn()
+                ->addColumn('action', function (Produk $row) {
+                    return view('pages.produk.btn-produk', compact('row'));
+                })
+                ->addColumn('satuan', function (Produk $row) {
+                    // $data_satuan = Satuan::all();
+                    $satuan = Satuan::where('id', '=', $row->unit)->first();
+                    return $row;
+                })
+                ->rawColumns(['action'])
+                ->make(true);
         }
 
         return view('pages.produk.produk-index');
     }
 
-    // public function index(UsersDataTable $dataTable)
+    // public function index(ProdukDataTable $dataTable)
     // {
     //     return $dataTable->render('pages.produk.produk-index');
     // }
 
+    // public function index()
+    // {
+    //     $data_produk = Produk::paginate();
+    //     return view('pages.produk.produk-index', compact('data_produk'))
+    //         ->with('title', 'Produk List');
+    // }
     /**
      * Show the form for creating a new resource.
      */

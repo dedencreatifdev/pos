@@ -62,3 +62,7 @@
     <!-- /.col-md-6 -->
 </div>
 @endsection
+
+@push('js')
+<script src="dist/js/pages/dashboard2.js"></script>
+@endpush
