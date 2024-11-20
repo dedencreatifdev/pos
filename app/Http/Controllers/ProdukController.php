@@ -26,9 +26,9 @@ class ProdukController extends Controller
 
             return DataTables::of($data)
                 ->addIndexColumn()
-                // ->addColumn('action', function (Produk $row) {
-                //     return view('pages.produk.btn-produk', compact('row'));
-                // })
+                ->addColumn('action', function (Produk $row) {
+                    return view('pages.produk.btn-produk', compact('row'));
+                })
                 ->addColumn('satuan', function (Produk $produk): string {
                     return $produk->getSatuan['name'] ?? '';
                 })

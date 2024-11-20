@@ -88,46 +88,53 @@
                     },
                     {
                         data: 'satuan',
-                        name: 'satuan'
+                        name: 'satuan',
+                        orderable: false,
                     },
                     {
                         data: 'kategori',
-                        name: 'kategori'
+                        name: 'kategori',
+                        orderable: false,
                     },
                     {
                         data: 'merk',
-                        name: 'merk'
+                        name: 'merk',
+                        orderable: false,
                     },
                     {
                         data: 'price',
                         name: 'price',
                         render: $.fn.dataTable.render.number(',', '.', 2, ''),
-                        className: 'dt-body-right'
+                        className: 'dt-body-right',
+                        orderable: false,
                     },
                     {
                         data: 'quantity',
                         name: 'quantity',
                         render: $.fn.dataTable.render.number(',', '.', 0, ''),
-                        className: 'dt-body-center'
+                        className: 'dt-body-center',
+                        orderable: false,
                     },
                     {
                         data: 'cost',
                         name: 'cost',
                         render: $.fn.dataTable.render.number(',', '.', 2, ''),
-                        className: 'dt-body-right'
+                        className: 'dt-body-right',
+                        orderable: false,
                     },
                     {
                         data: 'alert_quantity',
                         name: 'alert_quantity',
                         render: $.fn.dataTable.render.number(',', '.', 0, ''),
-                        className: 'dt-body-center'
+                        className: 'dt-body-center',
+                        orderable: false,
                     },
-                    // {
-                    //     data: 'action',
-                    //     name: 'action',
-                    //     orderable: false,
-                    //     searchable: false
-                    // },
+                    {
+                        data: 'action',
+                        name: 'action',
+                        orderable: false,
+                        searchable: false
+                    },
                 ]
             });
 
