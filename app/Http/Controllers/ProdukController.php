@@ -39,9 +39,10 @@ class ProdukController extends Controller
                     return $produk->getMerk['name'] ?? '';
                 })
                 ->rawColumns(['action'])
-                ->make(true);
+                ->make(true)
+                ;
         }
-        return view('pages.produk.produk-index');
+        return view('pages.produk.produk-index')->with('title', 'Produk List');
     }
 
     // public function index(ProdukDataTable $dataTable)

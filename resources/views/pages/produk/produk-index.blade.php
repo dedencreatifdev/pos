@@ -8,7 +8,7 @@
                 </div>
                 <div class="p-1 card-body">
                     <table id="produk-tables" class="table table-sm table-striped">
-                        <thead>
+                        <thead class="bg-primary">
                             <tr>
                                 {{-- <th>#</th> --}}
                                 <th>Code</th>
