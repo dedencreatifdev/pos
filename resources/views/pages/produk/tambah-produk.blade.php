@@ -3,15 +3,23 @@
     <div class="row">
         <div class="col-12">
             <div class="card">
-                <div class="card-header"></div>
+                <div class="card-header">
+                    <h3 class="card-title">Produk Informasi</h3>
+
+                    <div class="card-tools">
+
+                    </div>
+                    <!-- /.card-tools -->
+                </div>
+
                 <div class="card-body">
-                    <form action="" method="post">
+                    <form action="{{ route('produklist.store') }}" method="post">
                         <div class="row">
                             @csrf
                             <div class="form-group col-md-3 col-sm-4 col-12">
                                 <label for="exampleInputEmail1">Tipe Produk<code>*</code></label>
                                 <div class="input-group">
-                                    <select class="form-control form-control-sm" style="width: 100%;">
+                                    <select name="type" class="form-control form-control-sm" style="width: 100%;">
                                         <option selected="selected">Alabama</option>
                                         <option>Alaska</option>
                                         <option>California</option>
@@ -29,7 +37,7 @@
                             <div class="form-group col-md-3 col-sm-4 col-12">
                                 <label for="exampleInputEmail1">Kode Barang <code>* (Bisa Scan Barcode)</code></label>
                                 <div class="input-group">
-                                    <input type="text" class="form-control form-control-sm">
+                                    <input type="text" name="code" class="form-control form-control-sm">
                                     <div class="input-group-append">
                                         <span class="input-group-text"><i class="fas fa-barcode"></i></span>
                                     </div>
@@ -42,7 +50,7 @@
                             <div class="form-group col-md-6 col-sm-6  col-12">
                                 <label for="exampleInputEmail1">Nama Barang <code>*</code></label>
                                 <div class="input-group">
-                                    <input type="text" class="form-control form-control-sm">
+                                    <input type="text" name="name" class="form-control form-control-sm">
                                     {{-- invalid --}}
                                     <div class="input-group-append">
                                         <span class="input-group-text"><i class="fas fa-th"></i></span>
@@ -56,7 +64,7 @@
                             <div class="form-group col-md-3 col-sm-4 col-12">
                                 <label for="exampleInputEmail1">Barcode Symbology<code>*</code></label>
                                 <div class="input-group">
-                                    <select class="form-control form-control-sm" style="width: 100%;">
+                                    <select name="barcode_symbology" class="form-control form-control-sm" style="width: 100%;">
                                         <option selected="selected">Alabama</option>
                                         <option>Alaska</option>
                                         <option>California</option>
@@ -69,7 +77,8 @@
                                         <code>Bisa Scan Barcode</code>
                                     </span>
                                 </div>
-                            </div><div class="form-group col-md-3 col-sm-4 col-12">
+                            </div>
+                            <div class="form-group col-md-3 col-sm-4 col-12">
                                 <label for="exampleInputEmail1">Satuan<code>*</code></label>
                                 <div class="input-group">
                                     <select class="form-control form-control-sm" style="width: 100%;">
@@ -89,7 +98,7 @@
                             <div class="form-group col-md-3 col-sm-4 col-12">
                                 <label for="exampleInputEmail1">Kategori<code>*</code></label>
                                 <div class="input-group">
-                                    <select class="form-control form-control-sm" style="width: 100%;">
+                                    <select name="category_id" class="form-control form-control-sm" style="width: 100%;">
                                         <option selected="selected">Alabama</option>
                                         <option>Alaska</option>
                                         <option>California</option>
@@ -138,7 +147,7 @@
                             <div class="form-group col-md-3 col-sm-4 col-12">
                                 <label for="exampleInputEmail1">Harga Jual <code>* </code></label>
                                 <div class="input-group">
-                                    <input type="text" class="form-control form-control-sm">
+                                    <input type="text" name="price" class="form-control form-control-sm">
                                     <div class="input-group-append">
                                         <span class="input-group-text"><i class="fas fa-barcode"></i></span>
                                     </div>
@@ -165,31 +174,47 @@
                             </div>
 
                             <div class="form-group col-12">
-                                <label for="exampleInputEmail1">Detail<code>*</code></label>
-                                <textarea id="summernote" rows="10"></textarea>
+                                <label for="exampleInputEmail1">Details <code>*</code></label>
+                                <textarea name="product_details" id="summernote" rows="10"></textarea>
+                            </div>
+
+
+                            <div class="mailbox-controls">
+                                <!-- Check all button -->
+                                <button type="submit" class="btn btn-default btn-sm checkbox-toggle"><i
+                                        class="far fa-square"></i>
+                                </button>
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-default btn-sm">
+                                        <i class="far fa-trash-alt"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-default btn-sm">
+                                        <i class="fas fa-reply"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-default btn-sm">
+                                        <i class="fas fa-share"></i>
+                                    </button>
+                                </div>
+                                <!-- /.btn-group -->
+                                <button type="button" class="btn btn-default btn-sm">
+                                    <i class="fas fa-sync-alt"></i>
+                                </button>
+                                <div class="float-right">
+                                    1-50/200
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-default btn-sm">
+                                            <i class="fas fa-chevron-left"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-default btn-sm">
+                                            <i class="fas fa-chevron-right"></i>
+                                        </button>
+                                    </div>
+                                    <!-- /.btn-group -->
+                                </div>
+                                <!-- /.float-right -->
                             </div>
                         </div>
                     </form>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6 col-12">
-            <div class="card">
-                <div class="card-header">
-
-                </div>
-                <div class="p-1 card-body">
-
-                </div>
-            </div>
-        </div>
-        <div class="col-12">
-            <div class="card">
-                <div class="card-header">
-
-                </div>
-                <div class="card-body">
-
                 </div>
             </div>
         </div>

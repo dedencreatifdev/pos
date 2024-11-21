@@ -57,7 +57,15 @@ class ProdukController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Produk::create([
+            'code' => '123456798',
+            'name' => '123456798',
+            'price' => '123456798',
+            'category_id' => '6',
+            'barcode_symbology' => 'code128',
+            'type' => 'standard',
+        ]);
+        return redirect()->route('produklist.index')->with(['success' => 'Data Berhasil Disimpan!']);
     }
 
     /**
@@ -87,8 +95,10 @@ class ProdukController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Produk $produk)
+    public function destroy(Produk $produk, $id)
     {
-        //
+        $produk = Produk::findOrFail($id);
+        $produk->delete();
+        return redirect()->route('produklist.index')->with(['success' => 'Data Berhasil Disimpan!']);
     }
 }

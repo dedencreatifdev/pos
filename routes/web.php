@@ -20,7 +20,8 @@ Route::middleware(['auth'])
         Route::controller(ProdukController::class)->group(function () {
             Route::get('/produk', 'index')->name('produklist.index');
             Route::get('/produk-tambah', 'create')->name('produklist.create');
-            // Route::post('/produk-store', 'index')->name('produk.index');
+            Route::post('/produk-store', 'store')->name('produklist.store');
+            Route::get('/produk-destroy/{id}', 'destroy')->name('produklist.destroy');
         });
     });
 

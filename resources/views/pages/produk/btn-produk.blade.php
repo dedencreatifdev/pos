@@ -19,10 +19,37 @@
             <i class="mr-2 fas fa-file"></i> Detail Produk
         </a>
         <div class="dropdown-divider"></div>
-        <a href="#" class="dropdown-item">
+        <a data-toggle="modal" data-target="#modal-sm" class="dropdown-item">
             <i class="mr-2 fas fa-trash"></i> Hapus Produk
         </a>
         <div class="dropdown-divider"></div>
         <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
     </div>
 </div>
+
+<div class="modal fade" id="modal-sm">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <form action="" method="post">
+
+                <div class="modal-header">
+                    {{-- <h4 class="modal-title">Small Modal</h4> --}}
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                {{-- <div class="modal-body">
+                    <p>One fine body&hellip;</p>
+                </div> --}}
+                <div class="modal-footer justify-content-between">
+                    <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-sm btn-danger">Save changes</button>
+                </div>
+
+            </form>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
