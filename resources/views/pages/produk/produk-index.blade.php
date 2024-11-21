@@ -4,11 +4,11 @@
         <div class="col">
             <div class="mb-2 card">
                 <div class="card-header">
-
+                    <p class="card-title">Compose New Message</p>
                 </div>
                 <div class="p-2 card-body">
-                    <table id="produk-tables" class="table table-sm table-striped table-hover">
-                        <thead class="bg-primary">
+                    <table id="produk-tables" class="table table-sm table-striped table-hover table-bordered">
+                        <thead class="bg-lightblue">
                             <tr>
                                 <th>#</th>
                                 <th>Kode Barang</th>
@@ -81,8 +81,9 @@
                 columns: [{
                         data: 'DT_RowIndex',
                         name: 'DT_RowIndex',
+                        className: 'dt-body-center',
                         searchable: false,
-                        orderable: false
+                        orderable: false,
                     },
                     {
                         data: 'code',
@@ -90,7 +91,8 @@
                     },
                     {
                         data: 'name',
-                        name: 'name'
+                        name: 'name',
+                        orderable: false,
                     },
                     {
                         data: 'satuan',
