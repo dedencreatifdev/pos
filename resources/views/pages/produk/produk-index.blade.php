@@ -6,13 +6,13 @@
                 <div class="card-header">
 
                 </div>
-                <div class="p-1 card-body">
-                    <table id="produk-tables" class="table table-sm table-striped">
+                <div class="p-2 card-body">
+                    <table id="produk-tables" class="table table-sm table-striped table-hover">
                         <thead class="bg-primary">
                             <tr>
-                                {{-- <th>#</th> --}}
-                                <th>Code</th>
-                                <th>Name</th>
+                                <th>#</th>
+                                <th>Kode Barang</th>
+                                <th>Nama Barang</th>
                                 <th>Satuan</th>
                                 <th>Kategori</th>
                                 <th>Merk</th>
@@ -77,8 +77,14 @@
                 "autoWidth": false,
                 "responsive": true,
 
-                ajax: "{{ route('produk.index') }}",
+                ajax: "{{ route('produklist.index') }}",
                 columns: [{
+                        data: 'DT_RowIndex',
+                        name: 'DT_RowIndex',
+                        searchable: false,
+                        orderable: false
+                    },
+                    {
                         data: 'code',
                         name: 'code'
                     },

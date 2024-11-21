@@ -16,9 +16,11 @@ Route::middleware(['auth'])
                 ->name('dashboard.index');
         });
 
-        // produk
+        // PRODUK
         Route::controller(ProdukController::class)->group(function () {
-            Route::get('/produk', 'index')->name('produk.index');
+            Route::get('/produk', 'index')->name('produklist.index');
+            Route::get('/produk-tambah', 'create')->name('produklist.create');
+            // Route::post('/produk-store', 'index')->name('produk.index');
         });
     });
 

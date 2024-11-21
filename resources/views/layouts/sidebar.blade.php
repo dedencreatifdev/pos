@@ -48,8 +48,8 @@
                     </ul>
                 </li>
                 <li class="nav-header">PRODUK</li>
-                <li class="nav-item {{ request()->routeis('produk.index') ? 'menu-open' : '' }}">
-                    <a href="#" class="nav-link {{ request()->routeis('produk.index') ? 'active' : '' }}">
+                <li class="nav-item {{ request()->routeis('produklist.*') ? 'menu-open' : '' }}">
+                    <a href="#" class="nav-link {{ request()->routeis('produklist.*') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-th"></i>
                         <p>
                             Produk
@@ -58,7 +58,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{ route('produk.index') }}" class="nav-link  {{ request()->routeis('produk.index') ? 'active' : '' }}">
+                            <a href="{{ route('produklist.index') }}" class="nav-link  {{ request()->routeis('produklist.index') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Daftar Produk</p>
                             </a>

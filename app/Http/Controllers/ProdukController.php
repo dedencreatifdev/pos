@@ -18,11 +18,10 @@ class ProdukController extends Controller
     public function index(Request $request)
     {
         if ($request->ajax()) {
-
             $data = Produk::query()
                 ->with('getSatuan')
-                ->with('getKategori');
-            // ->with('getMerk');
+                ->with('getKategori')
+                ->with('getMerk');
 
             return DataTables::of($data)
                 ->addIndexColumn()
@@ -40,28 +39,17 @@ class ProdukController extends Controller
                 })
                 ->rawColumns(['action'])
                 ->make(true)
-                ;
+            ;
         }
         return view('pages.produk.produk-index')->with('title', 'Produk List');
     }
 
-    // public function index(ProdukDataTable $dataTable)
-    // {
-    //     return $dataTable->render('pages.produk.produk-index');
-    // }
-
-    // public function index()
-    // {
-    //     $data_produk = Produk::paginate();
-    //     return view('pages.produk.produk-index', compact('data_produk'))
-    //         ->with('title', 'Produk List');
-    // }
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        //
+        return view('pages.produk.tambah-produk')->with('title', 'Tambah Produk');
     }
 
     /**
