@@ -2,7 +2,7 @@
 <div class="p-0 m-0 nav-item dropdown">
     <a class="px-1 py-0 text-sm btn btn-xs btn-default" data-toggle="dropdown" href="#" aria-expanded="true">
         <i class="mr-1 far fa-file"></i>
-Action
+        Action
     </a>
     <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right" style="left: inherit; right: 0px;">
         <span class="dropdown-header">Aksi</span>

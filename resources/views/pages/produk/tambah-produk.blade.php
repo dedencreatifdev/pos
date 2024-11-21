@@ -1,129 +1,195 @@
 @extends('layouts.app')
 @section('konten')
     <div class="row">
-        <div class="col">
+        <div class="col-12">
             <div class="card">
-                <div class="p-0 card-header">
-                    <div class="mailbox-controls">
-                        <!-- Check all button -->
-                        <button type="button" class="btn btn-default btn-sm checkbox-toggle">
-                            <i class="mr-2 fas fa-reply"></i>
-                            Kembali
-                        </button>
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-success btn-sm">
-                                <i class="mr-2 far fa-save"></i>
-                                Simpan
-                            </button>
-                            <button type="button" class="btn btn-primary btn-sm">
-                                <i class="mr-2 fas fa-plus"></i>
-                                Tambah
-                            </button>
-                            <button type="button" class="btn btn-default btn-sm">
-                                <i class="fas fa-share"></i>
-                            </button>
-                        </div>
-                        <!-- /.btn-group -->
-                        <button type="button" class="btn btn-default btn-sm">
-                            <i class="fas fa-sync-alt"></i>
-                        </button>
-                    </div>
-                </div>
+                <div class="card-header"></div>
                 <div class="card-body">
                     <form action="" method="post">
                         <div class="row">
                             @csrf
-                            <div class="col-md-6 col-sm-6 col-12">
-                                <div class="form-group row">
-                                    <label for="inputEmail3" class="col-sm-3 col-form-label">Kode Barang *</label>
-                                    <div class="col-sm-9">
-                                        <input type="email" class="form-control form-control-sm" id="inputEmail3"
-                                            placeholder="Kode Barang">
-                                    </div>
+                            <div class="form-group col-md-3 col-sm-4 col-12">
+                                <label for="exampleInputEmail1">Tipe Produk<code>*</code></label>
+                                <div class="input-group">
+                                    <select class="form-control form-control-sm" style="width: 100%;">
+                                        <option selected="selected">Alabama</option>
+                                        <option>Alaska</option>
+                                        <option>California</option>
+                                        <option>Delaware</option>
+                                        <option>Tennessee</option>
+                                        <option>Texas</option>
+                                        <option>Washington</option>
+                                    </select>
+                                    <span id="exampleInputEmail1-error" class="error invalid-feedback">
+                                        <code>Bisa Scan Barcode</code>
+                                    </span>
                                 </div>
-                                <div class="form-group row">
-                                    <label for="inputEmail3" class="col-sm-3 col-form-label">Nama Barang</label>
-                                    <div class="col-sm-9">
-                                        <input type="email" class="form-control form-control-sm" id="inputEmail3"
-                                            placeholder="Nama Barang">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="inputEmail3" class="col-sm-3 col-form-label">Satuan</label>
-                                    <div class="col-sm-9">
-                                        <select class="form-control form-control-sm select2" style="width: 100%;">
-                                            <option selected="selected">Alabama</option>
-                                            <option>Alaska</option>
-                                            <option>California</option>
-                                            <option>Delaware</option>
-                                            <option>Tennessee</option>
-                                            <option>Texas</option>
-                                            <option>Washington</option>
-                                        </select>
+                            </div>
 
+                            <div class="form-group col-md-3 col-sm-4 col-12">
+                                <label for="exampleInputEmail1">Kode Barang <code>* (Bisa Scan Barcode)</code></label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control form-control-sm">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text"><i class="fas fa-barcode"></i></span>
                                     </div>
+                                    <span id="exampleInputEmail1-error" class="error invalid-feedback">
+                                        <code>Bisa Scan Barcode</code>
+                                    </span>
                                 </div>
-                                <div class="form-group row">
-                                    <label for="inputEmail3" class="col-sm-3 col-form-label">Kategori</label>
-                                    <div class="col-sm-9">
-                                        <select class="form-control form-control-sm select2" style="width: 100%;">
-                                            <option selected="selected">Alabama</option>
-                                            <option>Alaska</option>
-                                            <option>California</option>
-                                            <option>Delaware</option>
-                                            <option>Tennessee</option>
-                                            <option>Texas</option>
-                                            <option>Washington</option>
-                                        </select>
+                            </div>
 
+                            <div class="form-group col-md-6 col-sm-6  col-12">
+                                <label for="exampleInputEmail1">Nama Barang <code>*</code></label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control form-control-sm">
+                                    {{-- invalid --}}
+                                    <div class="input-group-append">
+                                        <span class="input-group-text"><i class="fas fa-th"></i></span>
                                     </div>
+                                    <span id="exampleInputEmail1-error" class="error invalid-feedback">
+                                        Please enter a email address
+                                    </span>
                                 </div>
                             </div>
-                            <div class="col-md-6 col-12">
-                                <div class="form-group row">
-                                    <label for="inputEmail3" class="col-sm-3 col-form-label">Nama Barang</label>
-                                    <div class="col-sm-9">
-                                        <input type="email" class="form-control form-control-sm" id="inputEmail3"
-                                            placeholder="Nama Barang">
-                                    </div>
+
+                            <div class="form-group col-md-3 col-sm-4 col-12">
+                                <label for="exampleInputEmail1">Barcode Symbology<code>*</code></label>
+                                <div class="input-group">
+                                    <select class="form-control form-control-sm" style="width: 100%;">
+                                        <option selected="selected">Alabama</option>
+                                        <option>Alaska</option>
+                                        <option>California</option>
+                                        <option>Delaware</option>
+                                        <option>Tennessee</option>
+                                        <option>Texas</option>
+                                        <option>Washington</option>
+                                    </select>
+                                    <span id="exampleInputEmail1-error" class="error invalid-feedback">
+                                        <code>Bisa Scan Barcode</code>
+                                    </span>
                                 </div>
-                                <div class="form-group row">
-                                    <label for="inputEmail3" class="col-sm-3 col-form-label">Nama Barangs</label>
-                                    <div class="col-sm-9">
-                                        <input type="email" class="form-control form-control-sm" id="inputEmail3"
-                                            placeholder="Nama Barang">
-                                    </div>
+                            </div><div class="form-group col-md-3 col-sm-4 col-12">
+                                <label for="exampleInputEmail1">Satuan<code>*</code></label>
+                                <div class="input-group">
+                                    <select class="form-control form-control-sm" style="width: 100%;">
+                                        <option selected="selected">Alabama</option>
+                                        <option>Alaska</option>
+                                        <option>California</option>
+                                        <option>Delaware</option>
+                                        <option>Tennessee</option>
+                                        <option>Texas</option>
+                                        <option>Washington</option>
+                                    </select>
+                                    <span id="exampleInputEmail1-error" class="error invalid-feedback">
+                                        <code>Bisa Scan Barcode</code>
+                                    </span>
                                 </div>
                             </div>
-                            <div class="col-xl-4 col-md-5 col-sm-6 col-12">
-                                <div class="form-group row">
-                                    <label for="inputEmail3" class="col-sm-3 col-form-label">Kode Barang</label>
-                                    <div class="col-sm-9">
-                                        <input type="email" class="form-control form-control-sm" id="inputEmail3"
-                                            placeholder="Email">
-                                    </div>
+                            <div class="form-group col-md-3 col-sm-4 col-12">
+                                <label for="exampleInputEmail1">Kategori<code>*</code></label>
+                                <div class="input-group">
+                                    <select class="form-control form-control-sm" style="width: 100%;">
+                                        <option selected="selected">Alabama</option>
+                                        <option>Alaska</option>
+                                        <option>California</option>
+                                        <option>Delaware</option>
+                                        <option>Tennessee</option>
+                                        <option>Texas</option>
+                                        <option>Washington</option>
+                                    </select>
+                                    <span id="exampleInputEmail1-error" class="error invalid-feedback">
+                                        <code>Bisa Scan Barcode</code>
+                                    </span>
                                 </div>
                             </div>
-                            <div class="col-xl-4 col-md-5 col-sm-6 col-12">
-                                <div class="form-group row">
-                                    <label for="inputEmail3" class="col-sm-3 col-form-label">Kode Barang</label>
-                                    <div class="col-sm-9">
-                                        <input type="email" class="form-control form-control-sm" id="inputEmail3"
-                                            placeholder="Email">
-                                    </div>
+                            <div class="form-group col-md-3 col-sm-4 col-12">
+                                <label for="exampleInputEmail1">Merk<code>*</code></label>
+                                <div class="input-group">
+                                    <select class="form-control form-control-sm" style="width: 100%;">
+                                        <option selected="selected">Alabama</option>
+                                        <option>Alaska</option>
+                                        <option>California</option>
+                                        <option>Delaware</option>
+                                        <option>Tennessee</option>
+                                        <option>Texas</option>
+                                        <option>Washington</option>
+                                    </select>
+                                    <span id="exampleInputEmail1-error" class="error invalid-feedback">
+                                        <code>Bisa Scan Barcode</code>
+                                    </span>
                                 </div>
                             </div>
-                            <div class="col-xl-4 col-md-5 col-sm-6 col-12">
-                                <div class="form-group row">
-                                    <label for="inputEmail3" class="col-sm-3 col-form-label">Kode Barang</label>
-                                    <div class="col-sm-9">
-                                        <input type="email" class="form-control form-control-sm" id="inputEmail3"
-                                            placeholder="Email">
+
+
+
+                            <div class="form-group col-md-3 col-sm-4 col-12">
+                                <label for="exampleInputEmail1">Harga Beli <code>*</code></label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control form-control-sm">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text"><i class="fas fa-barcode"></i></span>
                                     </div>
+                                    <span id="exampleInputEmail1-error" class="error invalid-feedback">
+                                        <code>Bisa Scan Barcode</code>
+                                    </span>
                                 </div>
+                            </div>
+                            <div class="form-group col-md-3 col-sm-4 col-12">
+                                <label for="exampleInputEmail1">Harga Jual <code>* </code></label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control form-control-sm">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text"><i class="fas fa-barcode"></i></span>
+                                    </div>
+                                    <span id="exampleInputEmail1-error" class="error invalid-feedback">
+                                        <code>Bisa Scan Barcode</code>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-3 col-sm-4 col-12">
+                                <label for="exampleInputEmail1">Stok Minimal <code>* </code></label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control form-control-sm">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text"><i class="fas fa-barcode"></i></span>
+                                    </div>
+                                    <span id="exampleInputEmail1-error" class="error invalid-feedback">
+                                        <code>Bisa Scan Barcode</code>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="dropdown-divider">123</div>
+                            </div>
+
+                            <div class="form-group col-12">
+                                <label for="exampleInputEmail1">Merk<code>*</code></label>
+                                <textarea id="summernote" rows="10"></textarea>
                             </div>
                         </div>
                     </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-12">
+            <div class="card">
+                <div class="card-header">
+
+                </div>
+                <div class="p-1 card-body">
+
+                </div>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+
+                </div>
+                <div class="card-body">
+
                 </div>
             </div>
         </div>
@@ -134,19 +200,37 @@
     <!-- Select2 -->
     <link rel="stylesheet" href="/style/plugins/select2/css/select2.min.css">
     <link rel="stylesheet" href="/style/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
+    <!-- summernote -->
+    <link rel="stylesheet" href="/style/plugins/summernote/summernote-bs4.min.css">
+    <!-- CodeMirror -->
+    <link rel="stylesheet" href="/style/plugins/codemirror/codemirror.css">
+    <link rel="stylesheet" href="/style/plugins/codemirror/theme/monokai.css">
+    <!-- SimpleMDE -->
+    <link rel="stylesheet" href="/style/plugins/simplemde/simplemde.min.css">
 @endpush
 @push('js')
     <!-- Select2 -->
     <script src="/style/plugins/select2/js/select2.full.min.js"></script>
 
+
+    <!-- Summernote -->
+    <script src="/style/plugins/summernote/summernote-bs4.min.js"></script>
+    <!-- CodeMirror -->
+    <script src="/style/plugins/codemirror/codemirror.js"></script>
+    <script src="/style/plugins/codemirror/mode/css/css.js"></script>
+    <script src="/style/plugins/codemirror/mode/xml/xml.js"></script>
+    <script src="/style/plugins/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+
     <script>
         $(function() {
-            //Initialize Select2 Elements
-            $('.select2').select2()
+            // Summernote
+            $('#summernote').summernote()
 
-            //Initialize Select2 Elements
-            $('.select2bs4').select2({
-                theme: 'bootstrap4'
-            })
+            // CodeMirror
+            CodeMirror.fromTextArea(document.getElementById("codeMirrorDemo"), {
+                mode: "htmlmixed",
+                theme: "monokai"
+            });
         });
-    @endpush
+    </script>
+@endpush

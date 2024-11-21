@@ -4,7 +4,36 @@
         <div class="col">
             <div class="mb-2 card">
                 <div class="card-header">
-                    <p class="card-title">Compose New Message</p>
+
+                    <div class="card-tools">
+                        <div class="p-0 m-0 nav-item dropdown">
+                            <a class="px-1 py-0 text-sm btn btn-default" data-toggle="dropdown" href="#"
+                                aria-expanded="true">
+                                <i class="fas fa-bars"></i>
+
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right"
+                                style="left: inherit; right: 0px;">
+                                {{-- <div class="dropdown-divider"></div> --}}
+                                <a href="{{ route('produklist.create') }}" class="dropdown-item">
+                                    <i class="mr-2 fas fa-plus"></i> Tambah Produk
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a href="#" class="dropdown-item">
+                                    <i class="mr-2 fas fa-upload"></i> Import Produk
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a href="#" class="dropdown-item">
+                                    <i class="mr-2 fas fa-file-export"></i> Export Produk
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a href="#" class="dropdown-item">
+                                    <i class="mr-2 fas fa-barcode"></i> Cetak Barcode
+                                </a>
+                                {{-- <div class="dropdown-divider"></div> --}}
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="p-2 card-body">
                     <table id="produk-tables" class="table table-sm table-striped table-hover table-bordered">
@@ -20,7 +49,7 @@
                                 <th>Stok</th>
                                 <th>Hpp</th>
                                 <th>Alert</th>
-                                <th>Action</th>
+                                <th class="w-auto">Action</th>
                             </tr>
                         </thead>
                     </table>
