@@ -165,7 +165,7 @@
                             </div>
 
                             <div class="form-group col-12">
-                                <label for="exampleInputEmail1">Merk<code>*</code></label>
+                                <label for="exampleInputEmail1">Detail<code>*</code></label>
                                 <textarea id="summernote" rows="10"></textarea>
                             </div>
                         </div>
