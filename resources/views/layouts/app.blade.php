@@ -5,19 +5,21 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    @livewireStyles
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="/style/plugins/fontawesome-free/css/all.min.css">
     <!-- overlayScrollbars -->
     <link rel="stylesheet" href="/style/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="/style/dist/css/adminlte.min.css">
-
-
+    @livewireStyles
+    @livewireScripts
     <title>{{ $title ?? 'Page Title' }}</title>
+
+
 </head>
 
-<body class="text-sm hold-transition dark-light sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
+<body class="text-sm hold-transition light-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed"
+    style="height: auto;">
     <div class="wrapper">
 
         <livewire:komponen.navbar-menu></livewire:komponen.navbar-menu>
@@ -58,15 +60,22 @@
 
     <!-- REQUIRED SCRIPTS -->
     <!-- jQuery -->
-    {{-- <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script> --}}
-    @livewireScripts
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    {{-- <script src="/style/plugins/jquery/jquery.min.js"></script> --}}
     <!-- Bootstrap -->
     <script src="/style/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- AdminLTE App -->
     <script src="/style/dist/js/adminlte.js"></script>
-    <script src="/style/plugins/jquery/jquery.min.js"></script>
+    {{-- <script src="/style/dist/js/pages/dashboard.js"></script> --}}
 
     {{-- <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.1/dist/js/adminlte.min.js"></script> --}}
+    {{-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
+    </script> --}}
+    {{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous">
+    </script> --}}
+
 
 </body>
 
