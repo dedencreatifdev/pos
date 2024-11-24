@@ -24,7 +24,7 @@
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                     data-accordion="false">
 
-                    <x-link :active="request()->is('/') ? 'menu-open' : ''" :activelink="request()->is('/') ? 'active' : ''">
+                    <x-link icon="fa-th" :active="request()->is('/') ? 'menu-open' : ''" :activelink="request()->is('/') ? 'active' : ''">
                         Dashboard
                         <x-slot:menu>
                             <x-link-menu href='/' class="nav-link {{ request()->is('/') ? 'active' : '' }}">CRM</x-link-menu>
@@ -33,7 +33,7 @@
                         </x-slot:menu>
                     </x-link>
 
-                    <x-link :active="request()->is('/produk') ? 'menu-open' : ''" :activelink="request()->is('/produk') ? 'active' : ''">
+                    <x-link icon="fa-th" :active="request()->is('/produk') ? 'menu-open' : ''" :activelink="request()->is('/produk') ? 'active' : ''">
                         Produk
                         <x-slot:menu>
                             <x-link-menu href='/' class="nav-link {{ request()->is('/') ? 'active' : '' }}">CRM</x-link-menu>

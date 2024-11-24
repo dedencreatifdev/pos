@@ -1,6 +1,6 @@
 <li class="nav-item {{ $active }}">
     <a href="#" class="nav-link {{ $activelink }}">
-        <i class="nav-icon fas fa-copy"></i>
+        <i class="nav-icon fas {{$icon}}"></i>
         <p>
             {{ $slot }}
             <i class="fas fa-angle-left right"></i>
